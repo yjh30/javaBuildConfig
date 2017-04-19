@@ -21,21 +21,21 @@
 #### 安装apache-tomcat
 
 - 遇到问题
-	问题：Cannot run program。。。 Permission denied
-	解决：命令行进入tomcat的bin根目录，执行chmod 777 *.sh问题解决
-	参考：http://blog.csdn.net/u010067452/article/details/55047444
+	- 问题：Cannot run program。。。 Permission denied  
+	- 解决：命令行进入tomcat的bin根目录，执行chmod 777 *.sh问题解决
+	- 参考：http://blog.csdn.net/u010067452/article/details/55047444
 
 
 #### 安装并配置IntelliJ IDEA
 
 - 编辑 Run/Debug Configurations，配置应用服务器，指定tomcat位置
 - 遇到问题
-问题：Tomcat启动时Mac端口被占用
-例子：`错误:代理抛出异常错误: java.rmi.server.ExportException: Port already in use: 1099; nested exception is: 
-java.net.BindException: Address already in use`
-解决：
-`lsof -i tcp:1099` 查看端口1099被占用的进程
-`kill -9 1533` 杀死掉进程3794
+	- 问题：Tomcat启动时Mac端口被占用
+	- 例子：`错误:代理抛出异常错误: java.rmi.server.ExportException: Port already in use: 1099; nested exception is: 
+	java.net.BindException: Address already in use`
+	- 解决：
+	`lsof -i tcp:1099` 查看端口1099被占用的进程
+	`kill -9 1533` 杀死掉进程3794
 
 - 注意点
 Stop tomcat 按钮需要点击两次，不然tomcat server JMX port 端口仍然被占用
