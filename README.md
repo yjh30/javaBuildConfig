@@ -63,7 +63,7 @@ Stop tomcat 按钮需要点击两次，不然tomcat server JMX port 端口仍然
 
 ## 三、认识java后端项目工程文件
 
-** 1.查看以${projectName}.iml工程配置文件 **
+** 查看以${projectName}.iml工程配置文件 **
 
 配置项：
 
