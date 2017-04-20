@@ -2,7 +2,7 @@
 
 ## 一、环境搭建
 
-** 1、安装并配置jdk **
+__ 1、安装并配置jdk __
 
 	JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
 	PATH=$JAVA_HOME/bin:$PATH
@@ -11,14 +11,14 @@
 测试命令：`echo $JAVA_HOME`
 
 
-** 2、安装并配置apache-maven **
+__ 2、安装并配置apache-maven __
 
 - 在~/目录下新建.m2文件夹，在~/.m2/目录下新建repository文件夹
 - 将下载的apache-maven/conf/settings.xml复制到~/.m2/目录中
 - 配置环境变量，参考：http://www.jianshu.com/p/191685a33786
 
 
-** 3、安装apache-tomcat **
+__ 3、安装apache-tomcat __
 
 - 遇到问题
 	- 问题：Cannot run program。。。 Permission denied  
@@ -26,7 +26,7 @@
 	- 参考：http://blog.csdn.net/u010067452/article/details/55047444
 
 
-** 4、安装并配置IntelliJ IDEA **
+__ 4、安装并配置IntelliJ IDEA __
 
 - 编辑 Run/Debug Configurations，配置应用服务器，指定tomcat位置
 - 遇到问题
@@ -41,7 +41,7 @@
 Stop tomcat 按钮需要点击两次，不然tomcat server JMX port 端口仍然被占用
 
 
-** 5、查看问题与解决问题途径 **
+__ 5、查看问题与解决问题途径 __
 
 	请仔细查看Event Log面板报错，直接google
 
@@ -51,7 +51,7 @@ Stop tomcat 按钮需要点击两次，不然tomcat server JMX port 端口仍然
 
 ## 二、简单认识maven
 
-** 1、创建maven项目 **
+__ 1、创建maven项目 __
 
 - 首先在idea中配置maven，User settings file 与 Local repository路径
 - 创建一个maven项目，会自动生成pow.xml和${projectName}.iml文件，在pow.xml中配置packaging为war，因为该项目是webapp类型
@@ -63,7 +63,7 @@ Stop tomcat 按钮需要点击两次，不然tomcat server JMX port 端口仍然
 
 ## 三、认识java后端项目工程文件
 
-** 1、查看以${projectName}.iml工程配置文件 **
+__ 1、查看以${projectName}.iml工程配置文件 __
 
 配置项：
 
@@ -71,14 +71,14 @@ Stop tomcat 按钮需要点击两次，不然tomcat server JMX port 端口仍然
 - webApp/root 项目的关联目录 如：./src/main/webapp
 
 
-** 2、查看pom.xml文件，找到配置 线上访问路径的contextPath项 **
+__ 2、查看pom.xml文件，找到配置 线上访问路径的contextPath项 __
 如：/yjh
 
 因此idea编辑器配置tomcat的Application context项一定要为 /yjh，
  > 我的理解为该目录是 java控制器路由的根目录
 
 
-** 3、查看./src/main/webapp/WEB-INF/web.xml文件 **
+__ 3、查看./src/main/webapp/WEB-INF/web.xml文件 __
 
 找到配置spring mvc项，如下：
 
@@ -92,7 +92,7 @@ Stop tomcat 按钮需要点击两次，不然tomcat server JMX port 端口仍然
 	    <load-on-startup>1</load-on-startup>
 	</servlet>
 
-** 4、查看./src/main/resources/yggservlet-mvc.xml **
+__ 4、查看./src/main/resources/yggservlet-mvc.xml __
 
 里面有资源映射，url请求拦截，freemarker的配置 
 
