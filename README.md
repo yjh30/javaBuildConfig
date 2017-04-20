@@ -94,5 +94,5 @@ Stop tomcat 按钮需要点击两次，不然tomcat server JMX port 端口仍然
 
 ** 4、查看./src/main/resources/yggservlet-mvc.xml **
 
-里面有资源映射，url请求拦截，freemarker的配置
+里面有资源映射，url请求拦截，freemarker的配置 
 
